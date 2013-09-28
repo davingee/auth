@@ -1,0 +1,24 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-horizontal"}) do |f| %>
+
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :value => session[:email], :id => "email_field" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password, :id => "password_field" %>
+    </div>
+  </div>
+
+  <div>
+    <label class="checkbox">
+      <%= f.check_box :remember_me %> Remember me
+    </label>
+    <button onclick="return validateLogin();" type="submit" class="btn btn-medium btn-info pull-right">Login</button>
+    <div class="clear"></div>
+  </div>
+<% end %>

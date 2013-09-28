@@ -1,0 +1,46 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass";
+@import "variables";
+
+.social-login {
+  @include clearfix();
+  @include border-radius(3px);
+  display: inline-block;
+  width: 235px;
+
+  .icon,
+  .name {
+    font-size: 16px;
+    color: #FFF;
+  }
+  .icon {
+    float: left;
+    border-right: 1px solid rgba(0,0,0,0.3);
+  }
+  .name {
+    @include text-shadow(none);
+    float: left;
+    padding: 8px 0 8px 15px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+  }
+  &.facebook {
+    background: $fb-color;
+    .icon {
+      padding: 10px 7px 6px 15px;
+    }
+    &:hover {
+      background: darken($fb-color, 5%);
+    }
+  }
+  &.linkedin {
+    background: $li-color;
+    .icon {
+      padding: 9px 10px 7px 12px;
+    }
+    &:hover {
+      background: darken($li-color, 5%);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<% placeholder = nil if placeholder.blank? %>
+<% value = nil if value.blank? %>
+<% id = nil if id.blank? %>
+<% rows = 4 if rows.blank? %>
+<% cols = nil if cols.blank? %>
+<% text_area_options = {} %>
+<% autocomplete = autocomplete.present? ? autocomplete : "on" %>
+<% text_area_options[:placeholder] = placeholder if placeholder.present? %>
+<% text_area_options[:value] = value if value.present? %>
+<% text_area_options[:id] = id if id.present? %>
+<% text_area_options[:rows] = rows if rows.present? %>
+<% text_area_options[:cols] = cols if cols.present? %>
+<% text_area_options[:autocomplete] = autocomplete %>
+
+
+<% show_field_name_in_error ||= show_field_name_in_error.nil? %>
+<div class="control-group <%= "error" if model.errors[field].present? %>">
+  <% if defined? field_name then %>
+    <label class="control-label"><%= field_name %></label>
+  <% else %>
+    <%# form.label field, :class => 'control-label' %>
+  <% end %>
+  <div class="controls">
+    <% rows = rows || 5 %>
+    <%= form.text_area field, text_area_options %>
+    <% if !model.errors[field].empty? %>
+      <span class="help-inline">
+        <% model.errors[field].each do |msg|  %>
+          <% if !show_field_name_in_error then %>
+            <small><%= "#{msg}" %></small>
+          <% else %>
+            <small><%= field.to_s.humanize + " #{msg}" %></small>
+          <% end %>
+        <% end %>
+      </span>
+    <% end %>
+  </div>
+</div>

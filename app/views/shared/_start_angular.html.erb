@@ -1,0 +1,8 @@
+Start angular
+
+<%= link_to "sign out", destroy_user_session_path, method: :delete %>
+<%= current_user.name %>
+<br>
+<%= content_tag(:div, current_user.authentication_token, :'data-token' => current_user.authentication_token, :id => "token") %>
+
+<p>I am in /app/views/shared/start_angular.html.erb</p>

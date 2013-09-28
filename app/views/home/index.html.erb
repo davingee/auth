@@ -1,0 +1,8 @@
+<% unless signed_in? %>
+  <div class='logins'>
+    <%= render "devise/shared/social_button", :provider => "Facebook" %>
+    <a class="email authenticate" href="<%= new_user_registration_path %>">Sign up with email</a>
+    <a class="email authenticate" href="<%= new_user_session_path %>">Sign in with email</a>
+  </div>
+<% end %>
+

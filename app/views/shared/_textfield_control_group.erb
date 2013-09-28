@@ -1,0 +1,26 @@
+<%# the_value = value.blank? ? '' : (":value => #{value}") %>
+
+<% placeholder = "" if placeholder.blank? %>
+<% show_field_name_in_error ||= show_field_name_in_error.nil? %>
+<div class="control-group <%= "error" if model.errors[field].present? %>">
+  
+  <% if defined? field_name then %>
+    <%= form.label field_name, :class => 'control-label' %>
+  <% else %>
+    <%# form.label field, :class => 'control-label' %>
+  <% end %>
+  <div class="controls">
+    <%= form.text_field field, :placeholder => placeholder %>
+    <% if !model.errors[field].empty? %>
+      <span class="help-inline">
+        <% model.errors[field].each do |msg|  %>
+          <% if !show_field_name_in_error then %>
+            <small><%= "#{msg}" %></small><br />
+          <% else %>
+            <small><%= field.to_s.humanize + " #{msg}" %></small><br />
+          <% end %>
+        <% end %>
+      </span>
+    <% end %>
+  </div>
+</div>

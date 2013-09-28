@@ -1,0 +1,54 @@
+<div id="login-sign-up" class="well <%= defined?(modal) ? "modal fade" : "" %>">
+
+  <div class="modal-body">
+    <div class="top">
+      <%# image_tag "", :alt => "", :class => "logo" %>
+      <h3 class="password_reset top hide">Reset your password.</h3>
+      <h3 class="sign_up top hide">Register to Start Posting!</h3>
+      <h3 class="login top hide">Login</h3>
+      <%# image_tag "cool graph showing stuff.jpg" %>
+      <%= render "devise/shared/social_button", :provider => "Facebook" %>
+      <%# render "devise/shared/social_button", :provider => "Linkedin" %>
+      <div class="were-not-dicks">We don't post anything without your permission</div>
+    </div>
+
+    <!--SIGN UP-->
+    <div class="sign_up bottom hide">
+      <div class="text-error center-text" id="error_output_field"></div>
+      <%= render "devise/registrations/new", :resource => User.new, :resource_name => 'user' %>
+    </div>
+
+    <!--LOGIN-->
+    <div class="login bottom hide">
+      <div class="text-error center-text" id="error_output_field"></div>
+      <%= render "devise/sessions/new", :resource => User.new, :resource_name => 'user' %>
+      <small class="show-forgot-password"><%= link_to "Forgot your password?", "#" %></small>
+      
+    </div>
+
+    <!--password reset-->
+    <div class="password_reset bottom hide">
+      <div class="text-error center-text" id="error_output_field"></div>
+      <%= render "devise/passwords/new", :resource => User.new, :resource_name => 'user' %>
+      
+    </div>
+
+  </div>
+
+
+  <div class="modal-footer password_reset footer hide">
+    Remember?
+    <a href="#" class="show-login">Login</a>
+  </div>
+
+  <div class="modal-footer login footer hide">
+    Not a user yet?
+    <a href="#" class="show-sign-up">Sign Up</a>
+  </div>
+  
+  <div class="modal-footer sign_up footer hide">
+    Already a user?
+    <a href="#" class="show-login">Login</a>
+  </div>
+
+</div>

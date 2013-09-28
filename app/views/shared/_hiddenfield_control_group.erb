@@ -1,0 +1,15 @@
+<% show_field_name_in_error ||= show_field_name_in_error.nil? %>
+<div class="hidden-control-group <%= "error" if model.errors[field].present? %>">
+  <%= form.hidden_field field %>
+  <% if !model.errors[field].empty? %>
+    <span class="help-inline">
+      <% model.errors[field].each do |msg|  %>
+        <% if !show_field_name_in_error then %>
+          <small><%= "#{msg}" %></small><br />
+        <% else %>
+          <small><%= field.to_s.humanize + " #{msg}" %></small><br />
+        <% end %>
+      <% end %>
+    </span>
+  <% end %>
+</div>

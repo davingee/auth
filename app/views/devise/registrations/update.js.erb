@@ -1,0 +1,16 @@
+<% if @user.errors.any? %>
+  var errors = "<ul class='unstyled'>";
+  <% @user.errors.full_messages.each do | error | %>
+    var error = "<%= escape_javascript(error) %>";
+    errors += "<li>" + error + "</li>";
+  <% end %>
+  errors += "</ul>";
+  $('.validation-error').html(errors);
+  $('button').removeClass('disabled');
+  $('#modal-submit-btn').html('Submit');
+<% else %>
+  //$("#modal01").modal("hide");
+  window.location.reload();
+<% end %>
+
+

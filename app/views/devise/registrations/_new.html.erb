@@ -1,0 +1,52 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+<!--<legend><i class="icon-user"></i> &nbsp;Basic Information</legend>-->
+  <%= render :partial => "shared/textfield_control_group", :locals => {
+      :form => f,
+      :model => resource,
+      :field => :first_name,
+      :field_name => "First name"
+  } %>
+  <%= render :partial => "shared/textfield_control_group", :locals => {
+      :form => f,
+      :model => resource,
+      :field => :last_name,
+      :field_name => "Last name"
+  } %>
+
+  <% #if resource.errors[:email].present? %>
+  <%= render :partial => "shared/textfield_control_group", :locals => {
+      :form => f,
+      :model => resource,
+      :field => :email,
+      :field_name => "Email"
+  } %>
+  <% #end %>
+
+  <%= render :partial => "shared/password_control_group", :locals => {
+      :form => f,
+      :model => resource,
+      :field => :password,
+      :field_name => "Password"
+  } %>
+
+  <!--Password confirmation left out, per mock ups-->
+  <%#= render :partial => "shared/password_control_group", :locals => {
+      :form => f,
+      :model => resource,
+      :field => :password_confirmation,
+      :field_name => "Password Confirmation"
+  } %>
+
+
+  <div class="avatar-wrapper">
+    <%= render :partial => "shared/filefield_control_group", :locals => {
+        :form => f,
+        :model => resource,
+        :field => :image,
+        :field_name => "Profile Image"
+    } %>
+  </div>
+
+  <%= f.submit "Join", :class => 'btn btn-medium btn-info pull-right' %>
+
+<% end %>

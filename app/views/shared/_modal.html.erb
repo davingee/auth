@@ -1,0 +1,27 @@
+<div class="modal hide fade" id="modal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="modal01-title">Overwrite me</h3>
+  </div>
+  
+  <div class="modal-body" id="modal01-body">Overwrite me</div>
+  
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button id="modal-submit-btn" class="btn btn-info" aria-hidden="true">Submit</button>
+  </div>
+  
+  <%= javascript_tag do %>
+    // if there's a form in the modal, submit it when the submit button is clicked
+    $('#modal-submit-btn').click(function() {
+      if ($('#modal-form').length) {
+        $('#modal-form').submit();
+        $('button').addClass('disabled');
+        $('#modal-submit-btn').html('Loading..');
+      }
+    });
+  <% end %>
+  
+</div>
+
+

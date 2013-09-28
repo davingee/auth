@@ -1,0 +1,50 @@
+development:
+  protocol: "http" # turn SSL on/off
+  hostname: "localhost:3000"
+  facebook_key: "133732003453721" #https://ninjathat.dev
+  facebook_secret: "aa723c4687ad8ab2f1eaf7100c8f0608"
+  #facebook_key: "208961185901937"
+  #facebook_secret: "f7f53c67c0a5b87997efc8224b1883de"
+  linkedin_key: "utu2td2fglt1"
+  linkedin_secret: "z9zuuFomrlUUjy8h"
+  facebook_url: "https://developers.facebook.com/apps/208961185901937/summary"
+  paypal_env: "test"
+  paypal_login: "scotts_1319589624_biz_api1.gmail.com"
+  paypal_password: "1319589661"
+  paypal_signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31AQ4.asxzjtAURVnYwBGmDqTXg9Q1"
+  google_key: "ABQIAAAAjkocf-uapJh4zp82saxrjRTJQa0g3IQ9GZqIMmInSLzwtGDKaBTVoUPc9vOiQIy1jPApkJIrsM5V6g"
+  stripe_publishable_key: "pk_test_gT4eAxAUqW6gmrqbs1maFulk"
+  stripe_secret_key: "sk_test_wh6Th13TbPMpnWGFo7Kn2hg7"
+  strip_js: "https://js.stripe.com/v1/stripe-debug.js"
+
+test:
+  protocol: "http" # turn SSL on/off
+  hostname: "localhost:3000"
+  linkedin_key: "utu2td2fglt1"
+  linkedin_secret: "z9zuuFomrlUUjy8h"
+  facebook_key: "208961185901937"
+  facebook_secret: "4646aea7279cd0f42f36808f8206cfd1"
+  facebook_url: "http://www.facebook.com/apps/application.php?id=232173333473940"
+  paypal_env: "test"
+  paypal_login: "scotts_1319589624_biz_api1.gmail.com"
+  paypal_password: "1319589661"
+  paypal_signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31AQ4.asxzjtAURVnYwBGmDqTXg9Q1"
+  google_key: "ABQIAAAAjkocf-uapJh4zp82saxrjRTJQa0g3IQ9GZqIMmInSLzwtGDKaBTVoUPc9vOiQIy1jPApkJIrsM5V6g"
+  stripe_publishable_key: "pk_test_gT4eAxAUqW6gmrqbs1maFulk"
+  stripe_secret_key: "sk_test_wh6Th13TbPMpnWGFo7Kn2hg7"
+  strip_js: "https://js.stripe.com/v1/stripe-debug.js"
+
+staging:
+  protocol: "https" # turn SSL on/off
+  hostname: "staging.ninjathat.com"
+  facebook_url: "https://www.facebook.com/apps/application.php?id=385706138171898%2F"
+  paypal_env: "test"
+  google_key: "AIzaSyAi43R79isU8MeS7ISBxAdUUe2phnoxpoM"
+  strip_js: "https://js.stripe.com/v1/stripe-debug.js"
+
+production:
+  protocol: "https" # turn SSL on/off
+  hostname: "ninjathat.com"
+  facebook_url: "https://www.facebook.com/apps/application.php?id=385706138171898%2F"
+  paypal_env: "production"
+  google_key: "AIzaSyAi43R79isU8MeS7ISBxAdUUe2phnoxpoM"

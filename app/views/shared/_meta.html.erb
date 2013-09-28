@@ -1,0 +1,20 @@
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta name="author" content="">
+<!-- <meta name="description" content=""/>
+<meta name="keywords" content=""/> -->
+<% @og_tags = {:keywords => "rumor, source"} %>
+<% @og_tags.merge!(:description => "source of rumors") %>
+<% if defined?(@og_tags) %>
+  <% @og_tags.each do |k,v| %>
+    <meta property="<%= k %>" content="<%= v %>" />
+  <% end %>
+<% end %>
+<%= yield :og_tags %>
+
+<!-- 
+<meta name="robots" content="index,follow"/>
+<meta name="googlebot" content="index,follow"/> 
+<meta name="revisit-after" content="14 days"/>
+<meta name="msvalidate.01" content="346680C5DD17A9A7EF3883A77F4609F0" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+-->

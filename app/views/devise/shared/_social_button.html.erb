@@ -1,0 +1,13 @@
+<%= link_to "/auth/#{provider.downcase}", :class => "social_login #{provider.downcase}", :id => "#{provider.downcase}_sign_in" do %>
+  <div class='icon'>
+    <i class="icon-<%= provider.downcase %>"></i>
+  </div>
+  <div class='name'>Sign In with <%= provider %></div>
+  
+<% end %>
+<%# link_to user_omniauth_authorize_path(provider.downcase.to_sym), :class => "social-login #{provider.downcase}", :id => "#{provider.downcase}_sign_in" do %>
+  <!-- <div class='icon'>
+    <i class="icon-<%# provider.downcase %>"></i>
+  </div>
+  <div class='name'>Sign In with <%# provider %></div> -->
+<%# end %>

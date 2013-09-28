@@ -1,0 +1,58 @@
+<%# if company? %>
+  <%# render "/shared/company_nav" %>
+<%# else %>
+
+<div class="navbar navbar-inverse ">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Xml Report parser", root_path, :class => "brand" %>
+        <div class="nav">
+           <ul class="nav" role="navigation">
+             <li class="divider-vertical"></li>
+             <% if current_user %>
+             <li><%= link_to "Companies", companies_path %></li>
+             <li class="divider-vertical"></li>
+             <li><%= link_to "My reports", my_reports_path %></li>
+             <li class="divider-vertical"></li>
+               <li><%# link_to "Reports", reports_path %></li>
+               <li class="divider-vertical"></li>
+               <% if current_user.is("admin") %>
+                 <li><%= link_to "Admin", "/admin/"  %></li>
+                 <li class="divider-vertical"></li>
+                <% end %>
+                <li><a tabindex="-1" href="/edit_my_info">Edit my profile</a></li>
+                <li class="divider-vertical"></li>
+                
+                <li><a tabindex="-1" href="/signout">Sign out</a></li>
+                <li class="divider-vertical"></li>
+                
+             <% end %>
+           </ul>
+        </div> 
+        <% if current_user %>         
+           <div id="user_nav" class="pull-right nav">
+              <%= link_to "#", :class => "dropdown-toggle user_nav" do %>
+                <%= current_user.first_name %>      
+                <%= current_user.last_name %>
+              <% end %>
+             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><%= link_to "My reports", my_reports_path, :tabindex => 1 %></li>
+                <li><a tabindex="-1" href="/my_profile">My profile</a></li>
+                <li class="divider"></li>
+                <% if current_user.is("admin") %>
+                  <li><a tabindex="-1" href="/admin">Admin</a></li>
+                <% end %>
+                <li><a tabindex="-1" href="/signout">Sign out</a></li>
+             </ul>
+          </div>
+          <%# link_to number_of_notifications, user_notifications_path, :title => "Notifications", :class => "nav-notification-count pull-right #{number_of_notifications == 0 ? "zero" : ""}" %>
+        <% else %>
+        <div id="login_btn" class="span1 pull-right authenticate">
+          <%= link_to raw("<i class='icon-user'></i> Login"), login_path  %>
+          <%= link_to raw("<i class='icon-user'></i> Sign up"), sign_up_path  %>
+        </div>
+         <% end %>  
+       </div>
+    </div>
+  </div>
+<%# end %>
